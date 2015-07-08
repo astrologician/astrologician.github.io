@@ -6060,8 +6060,35 @@ button.close {
     display: none !important; } }
 
 body {
-  padding-top: 50px; }
+  padding-top: 50px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; }
 
 .starter-template {
   padding: 40px 15px;
   text-align: center; }
+
+.navbar.navbar-inverse {
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  min-height: 46px; }
+  .navbar.navbar-inverse button.navbar-toggle {
+    border: none;
+    border-radius: 0; }
+    .navbar.navbar-inverse button.navbar-toggle:hover {
+      background: rgba(0, 0, 0, 0.3); }
+  .navbar.navbar-inverse .navbar-collapse {
+    height: 46px !important; }
+  .navbar.navbar-inverse .navbar-brand {
+    color: #fff;
+    padding: 14px 20px 14px 0;
+    height: 46px;
+    font-size: 16px; }
+  .navbar.navbar-inverse .navbar-nav li a {
+    color: #fff;
+    padding: 14px 20px;
+    font-size: 16px; }
+  .navbar.navbar-inverse .navbar-nav li.active a {
+    color: #9d9d9d;
+    background: none; }
+    .navbar.navbar-inverse .navbar-nav li.active a:hover {
+      background: none; }
