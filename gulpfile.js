@@ -17,6 +17,11 @@ gulp.task('scripts', function(){
     // gulp.src('node_modules/foundation/vendor/jquery.js')
 });
 
+gulp.task('fonts', function(){
+    gulp.src('node_modules/bootstrap-sass/assets/fonts/bootstrap/*')
+        .pipe(gulp.dest('./fonts/'));
+});
+
 gulp.task('connect', function() {
   connect.server();
 });
@@ -25,5 +30,4 @@ gulp.task('watch', function () {
     gulp.watch('./sass/**/*.scss', ['sass']);
 });
 
-
-gulp.task('default', ['sass', 'scripts', 'connect', 'watch']);
+gulp.task('default', ['sass', 'scripts', 'fonts', 'connect', 'watch']);
