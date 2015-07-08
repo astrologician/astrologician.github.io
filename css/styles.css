@@ -7881,6 +7881,10 @@ h1, h2, h3, h4, h5 {
     margin-top: 0 !important;
     font-size: 12px; }
 
+p.labels {
+  line-height: 1.8;
+  margin-bottom: 12px; }
+
 .panel-end-alert {
   margin-bottom: 0 !important; }
 
@@ -7892,6 +7896,9 @@ body > .primary.container {
 
 .container .text-muted {
   margin: 20px 0; }
+
+.remove-top-margin {
+  margin-top: 0 !important; }
 
 .footer > .container {
   padding-right: 15px;
