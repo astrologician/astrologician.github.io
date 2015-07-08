@@ -3,6 +3,7 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var connect = require('gulp-connect');
+var concat = require('gulp-concat');
 
 gulp.task('sass', function(){
     gulp.src('./sass/**/*.scss')
@@ -18,8 +19,8 @@ gulp.task('scripts', function(){
 });
 
 gulp.task('fonts', function(){
-    gulp.src('node_modules/bootstrap-sass/assets/fonts/bootstrap/*')
-        .pipe(gulp.dest('./fonts/bootstrap/'));
+    gulp.src('node_modules/font-awesome/fonts/*')
+        .pipe(gulp.dest('./fonts/'));
 });
 
 gulp.task('connect', function() {
