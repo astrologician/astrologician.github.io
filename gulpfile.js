@@ -19,7 +19,7 @@ gulp.task('scripts', function(){
 
 gulp.task('fonts', function(){
     gulp.src('node_modules/bootstrap-sass/assets/fonts/bootstrap/*')
-        .pipe(gulp.dest('./fonts/'));
+        .pipe(gulp.dest('./fonts/bootstrap/'));
 });
 
 gulp.task('connect', function() {

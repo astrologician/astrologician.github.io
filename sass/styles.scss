@@ -2,7 +2,9 @@
 
 body {
     // padding-top: 50px;
-    font-family: 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;
+    font-family: 'Roboto','Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;
+    font-size: 16px;
+    margin-bottom: 60px;
 }
 .starter-template {
     padding: 40px 15px;
@@ -12,21 +14,27 @@ html {
   position: relative;
   min-height: 100%;
 }
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
-}
 .footer {
   position: absolute;
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
-  height: 60px;
+  height: 94px;
   background-color: #f5f5f5;
-}
 
+  .thanks {
+    margin-top:0 !important;
+    font-size: 12px;
+  }
+}
+.panel-end-alert{
+    margin-bottom: 0 !important; 
+}
+.alert a {
+    font-weight: 700;
+}
 body > .primary.container {
-  padding: 15px 15px 50px;
+  padding: 15px 15px 94px;
 }
 .container .text-muted {
   margin: 20px 0;
@@ -84,7 +92,7 @@ body > .primary.container {
     padding-top: 94px;
     padding-bottom: 68px;
     background: url('../img/road.jpg');
-    // background-size: cover;
+    background-size: cover;
     color: #fff;
     position: relative;
     .jumbocover {
@@ -103,6 +111,12 @@ body > .primary.container {
         z-index: 1;
         position: relative;
     }
+    hr {
+        width: 50%;
+    }
+    h1 {
+        font-size: 36px;
+    }
 }
 
 .copy-nav {
@@ -111,3 +125,21 @@ body > .primary.container {
         padding: 0 .5em;
     }
 }
+
+.avatar,
+.avatar-small{
+    max-width: 200px;
+    border-radius: 100%;
+}
+.avatar {
+    width: 200px;
+}
+.narrow {
+    max-width: 768px;
+    margin: 0 auto;
+}
+// @media (min-width: 768px) {
+//     .container {
+//         max-width: 730px;
+//     }
+// }
