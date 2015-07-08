@@ -6108,7 +6108,7 @@ body > .primary.container {
     height: 46px !important; }
   .navbar.navbar-inverse .navbar-brand {
     color: #fff;
-    padding: 14px 20px 14px 0;
+    padding: 14px 20px 14px 15px;
     height: 46px;
     font-size: 16px; }
   .navbar.navbar-inverse .navbar-nav li a {
