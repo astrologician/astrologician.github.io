@@ -7,6 +7,12 @@ body {
     // font-size: 16px;
     margin-bottom: 60px;
 }
+a {
+    color: #f4645f;
+    &:hover {
+        color: #f1362f; 
+    }
+}
 .starter-template {
     padding: 40px 15px;
     text-align: center;
@@ -38,7 +44,8 @@ p.labels {
 .panel-end-alert{
     margin-bottom: 0 !important; 
 }
-.alert a {
+.alert-info a {
+    color: #337ab7;
     font-weight: 700;
 }
 body > .primary.container {
@@ -132,6 +139,7 @@ body > .primary.container {
     }
     hr {
         width: 50%;
+        opacity: 0.25;
     }
     h1 {
         font-size: 36px;

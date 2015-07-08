@@ -7858,6 +7858,11 @@ body {
   font-family: 'Roboto','Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;
   margin-bottom: 60px; }
 
+a {
+  color: #f4645f; }
+  a:hover {
+    color: #f1362f; }
+
 .starter-template {
   padding: 40px 15px;
   text-align: center; }
@@ -7887,7 +7892,8 @@ p.labels {
 .panel-end-alert {
   margin-bottom: 0 !important; }
 
-.alert a {
+.alert-info a {
+  color: #337ab7;
   font-weight: 700; }
 
 body > .primary.container {
@@ -7964,7 +7970,8 @@ body > .primary.container {
     z-index: 1;
     position: relative; }
   .jumbotron hr {
-    width: 50%; }
+    width: 50%;
+    opacity: 0.25; }
   .jumbotron h1 {
     font-size: 36px; }
 
