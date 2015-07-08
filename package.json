@@ -1,9 +1,12 @@
 {
   "devDependencies": {
     "gulp": "^3.9.0",
-    "gulp-sass": "^2.0.3"
+    "gulp-connect": "^2.2.0",
+    "gulp-sass": "^2.0.3",
+    "gulp-webserver": "^0.9.1"
   },
   "dependencies": {
+    "bootstrap-sass": "^3.3.5",
     "foundation": "^4.2.1"
   }
 }
