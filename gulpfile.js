@@ -27,6 +27,7 @@ gulp.task('connect', function() {
   connect.server();
 });
 
+
 gulp.task('watch', function () {
     gulp.watch('./sass/**/*.scss', ['sass']);
 });
