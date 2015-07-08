@@ -6105,7 +6105,7 @@ body > .primary.container {
     .navbar.navbar-inverse button.navbar-toggle:hover {
       background: rgba(0, 0, 0, 0.3); }
   .navbar.navbar-inverse .navbar-collapse {
-    height: 46px !important; }
+    min-height: 46px !important; }
   .navbar.navbar-inverse .navbar-brand {
     color: #fff;
     padding: 14px 20px 14px 15px;
