@@ -117,7 +117,7 @@ body > .primary.container {
     text-align: center;
     padding-top: 94px;
     padding-bottom: 68px;
-    background: url('../img/road.jpg');
+    background: url('../img/road_web.jpg');
     background-size: cover;
     color: #fff;
     position: relative;
@@ -153,20 +153,13 @@ body > .primary.container {
     }
 }
 
-.avatar,
-.avatar-small{
-    max-width: 200px;
-    border-radius: 100%;
-}
 .avatar {
+    max-width: 70%;
+    border-radius: 100%;
     width: 200px;
+    height: auto;
 }
 .narrow {
-    max-width: 768px;
+    max-width: 700px;
     margin: 0 auto;
 }
-// @media (min-width: 768px) {
-//     .container {
-//         max-width: 730px;
-//     }
-// }

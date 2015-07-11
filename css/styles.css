@@ -7951,7 +7951,7 @@ body > .primary.container {
   text-align: center;
   padding-top: 94px;
   padding-bottom: 68px;
-  background: url("../img/road.jpg");
+  background: url("../img/road_web.jpg");
   background-size: cover;
   color: #fff;
   position: relative; }
@@ -7980,14 +7980,12 @@ body > .primary.container {
   .copy-nav a {
     padding: 0 0.5em; }
 
-.avatar,
-.avatar-small {
-  max-width: 200px;
-  border-radius: 100%; }
-
 .avatar {
-  width: 200px; }
+  max-width: 70%;
+  border-radius: 100%;
+  width: 200px;
+  height: auto; }
 
 .narrow {
-  max-width: 768px;
+  max-width: 700px;
   margin: 0 auto; }
