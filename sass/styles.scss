@@ -166,3 +166,9 @@ img.media-object {
     width: 85px;
     height: auto;
 }
+
+@media (max-width: 555px) {
+    .publickey {
+        font-size: .75em;
+    }
+}
