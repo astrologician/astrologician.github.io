@@ -7988,3 +7988,7 @@ body > .primary.container {
 .narrow {
   max-width: 700px;
   margin: 0 auto; }
+
+img.media-object {
+  width: 85px;
+  height: auto; }
