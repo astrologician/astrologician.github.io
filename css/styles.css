@@ -7996,3 +7996,7 @@ img.media-object {
 @media (max-width: 555px) {
   .publickey {
     font-size: .75em; } }
+
+@media (max-width: 481px) {
+  .publickey {
+    font-size: .75em; } }
