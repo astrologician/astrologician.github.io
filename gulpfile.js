@@ -7,6 +7,7 @@ var concat = require('gulp-concat');
 var cssmin = require('gulp-cssmin');
 var minifyHTML = require('gulp-minify-html');
 var imagemin = require('gulp-imagemin');
+var cache = require('gulp-cache');
 
 gulp.task('sass', function(){
     gulp.src('./src/sass/**/*.scss')
@@ -35,7 +36,7 @@ gulp.task('html', function(){
 
 gulp.task('images', function() {
     gulp.src('src/img/**/*')
-        .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
+        .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
         .pipe(gulp.dest('dist/img'));
 });
 gulp.task('move', function() {
@@ -52,6 +53,7 @@ gulp.task('connect', function() {
 gulp.task('watch', function () {
     gulp.watch('./src/sass/**/*.scss', ['sass']);
     gulp.watch('./src/**/*.html', ['html']);
+    gulp.watch('./src/img/**/*', ['images'])
 });
 
 gulp.task('default', ['sass', 'scripts', 'fonts', 'html', 'move', 'images', 'connect', 'watch']);
