@@ -8,6 +8,7 @@ var cssmin = require('gulp-cssmin');
 var minifyHTML = require('gulp-minify-html');
 var imagemin = require('gulp-imagemin');
 var cache = require('gulp-cache');
+var fileInclude = require('gulp-file-include');
 
 gulp.task('sass', function(){
     gulp.src('./src/sass/**/*.scss')
@@ -30,6 +31,10 @@ gulp.task('fonts', function(){
 
 gulp.task('html', function(){
     gulp.src('src/**/*.html')
+        .pipe(fileInclude({
+            prefix: '@@',
+            basepath: '@file'
+        }))
         .pipe(minifyHTML({conditionals: true, spare: true, empty: true}))
         .pipe(gulp.dest('./dist/'));
 });
