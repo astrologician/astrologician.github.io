@@ -1,7 +1,0 @@
-# humanstxt.org/
-# The humans responsible & technology colophon
-
-# TEAM
-
-    Joe Cochran -- Developer -- @joecochran
-
