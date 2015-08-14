@@ -19,14 +19,14 @@ gulp.task('sass', function(){
 
 gulp.task('scripts', function(){
     gulp.src('node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js')
-        .pipe(gulp.dest('./dist/js/'));
+        .pipe(cache(gulp.dest('./dist/js/')));
     gulp.src('node_modules/jquery/dist/jquery.min.js')
-        .pipe(gulp.dest('./dist/js/'));
+        .pipe(cache(gulp.dest('./dist/js/')));
 });
 
 gulp.task('fonts', function(){
     gulp.src('node_modules/font-awesome/fonts/*')
-        .pipe(gulp.dest('./dist/fonts/'));
+        .pipe(cache(gulp.dest('./dist/fonts/')));
 });
 
 gulp.task('html', function(){
@@ -46,7 +46,7 @@ gulp.task('images', function() {
 });
 gulp.task('move', function() {
     gulp.src(['src/icons/**/*', 'src/humans.txt', 'src/browserconfig.xml', 'src/crossdomain.xml', 'src/joecochran.gpg', 'src/.htaccess'])
-        .pipe(gulp.dest('dist/'));
+        .pipe(cache(gulp.dest('dist/')));
 });
 gulp.task('connect', function() {
   connect.server({
