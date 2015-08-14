@@ -55,7 +55,7 @@ gulp.task('connect', function() {
 
 
 gulp.task('watch', function () {
-    gulp.watch('./sass/**/*.scss', ['sass']);
+    gulp.watch('./dist/sass/**/*.scss', ['sass']);
 });
 
 gulp.task('default', ['sass', 'scripts', 'fonts', 'html', 'images', 'connect', 'watch']);
