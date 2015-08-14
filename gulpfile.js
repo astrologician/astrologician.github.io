@@ -9,7 +9,7 @@ var minifyHTML = require('gulp-minify-html');
 var imagemin = require('gulp-imagemin');
 
 gulp.task('sass', function(){
-    gulp.src('.src/sass/**/*.scss')
+    gulp.src('./src/sass/**/*.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(cssmin())
         .pipe(gulp.dest('./dist/css'));
@@ -28,13 +28,8 @@ gulp.task('fonts', function(){
 });
 
 gulp.task('html', function(){
-    var opts = {
-        conditionals: true,
-        spare: true,
-        empty: true
-    };
-    return gulp.src('src/*.html')
-        .pipe(minifyHTML(opts))
+    gulp.src('src/**/*.html')
+        .pipe(minifyHTML({conditionals: true, spare: true, empty: true}))
         .pipe(gulp.dest('./dist/'));
 });
 
@@ -55,7 +50,8 @@ gulp.task('connect', function() {
 
 
 gulp.task('watch', function () {
-    gulp.watch('./dist/sass/**/*.scss', ['sass']);
+    gulp.watch('./src/sass/**/*.scss', ['sass']);
+    gulp.watch('./src/**/*.html', ['html']);
 });
 
-gulp.task('default', ['sass', 'scripts', 'fonts', 'html', 'images', 'connect', 'watch']);
+gulp.task('default', ['sass', 'scripts', 'fonts', 'html', 'move', 'images', 'connect', 'watch']);
