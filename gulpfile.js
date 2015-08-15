@@ -9,6 +9,7 @@ var minifyHTML = require('gulp-minify-html');
 var imagemin = require('gulp-imagemin');
 var cache = require('gulp-cache');
 var fileInclude = require('gulp-file-include');
+var uglify = require('gulp-uglify');
 
 gulp.task('sass', function(){
     gulp.src('./src/sass/**/*.scss')
@@ -18,10 +19,14 @@ gulp.task('sass', function(){
 });
 
 gulp.task('scripts', function(){
-    gulp.src('node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js')
-        .pipe(cache(gulp.dest('./dist/js/')));
-    gulp.src('node_modules/jquery/dist/jquery.min.js')
-        .pipe(cache(gulp.dest('./dist/js/')));
+    return gulp.src([
+        'src/js/plugins.js',
+        'node_modules/jquery/dist/jquery.min.js',
+        'node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js',
+        'src/js/picturefill.js'])
+        .pipe(concat('app.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest('./dist/js'));
 });
 
 gulp.task('fonts', function(){
