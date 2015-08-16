@@ -35,7 +35,7 @@ gulp.task('fonts', function(){
 });
 
 gulp.task('html', function(){
-    gulp.src('src/**/*.html')
+    gulp.src('src/*.html')
         .pipe(fileInclude({
             prefix: '@@',
             basepath: '@file'
@@ -43,14 +43,13 @@ gulp.task('html', function(){
         .pipe(minifyHTML({conditionals: true, spare: true, empty: true}))
         .pipe(gulp.dest('./dist/'));
 });
-
 gulp.task('images', function() {
     gulp.src('src/img/**/*')
         .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
         .pipe(gulp.dest('dist/img'));
 });
 gulp.task('move', function() {
-    gulp.src(['src/icons/**/*', 'src/humans.txt', 'src/browserconfig.xml', 'src/crossdomain.xml', 'src/joecochran.gpg', 'src/.htaccess'])
+    gulp.src(['src/icons/**/*', 'src/humans.txt', 'src/browserconfig.xml', 'src/crossdomain.xml', 'src/.htaccess'])
         .pipe(cache(gulp.dest('dist/')));
 });
 gulp.task('connect', function() {
@@ -63,7 +62,7 @@ gulp.task('connect', function() {
 gulp.task('watch', function () {
     gulp.watch('./src/sass/**/*.scss', ['sass']);
     gulp.watch('./src/**/*.html', ['html']);
-    gulp.watch('./src/img/**/*', ['images'])
+    gulp.watch('./src/img/**/*', ['images']);
 });
 
 gulp.task('default', ['sass', 'scripts', 'fonts', 'html', 'move', 'images', 'connect', 'watch']);
