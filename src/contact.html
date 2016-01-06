@@ -62,7 +62,7 @@
             <div class="form-group">
                 <label for="name" class="col-sm-2 control-label">Name</label>
                 <div class="col-sm-8">
-                    <input type="text" id="name" class="form-control" data-toggle="popover" data-placement="right" data-container="body" data-content="Minimum 50 characters.">
+                    <input type="text" id="name" class="form-control" data-toggle="popover" data-placement="right" data-container="body" data-content="Minimum 3 characters." data-trigger="manual">
                 </div>
             </div>
             <div class="form-group">
@@ -116,46 +116,52 @@
 
         $('#name').bind('change paste keyup', function(){
             if ( $(this).val().length < 3) {
+                if (! $(this).parents('.form-group').hasClass('has-error')) {
+                    $('#name').popover('show');
+                }
                 $(this).parents('.form-group').addClass('has-error').removeClass('has-success');
                 formProgress[0] = 0;
                 $progressBar.css('width', sumProgress(formProgress) + '%');
-                $(this).popover('show');
                 finalCheck();
             } else {
                 $(this).parents('.form-group').removeClass('has-error').addClass('has-success');
                 formProgress[0] = 33;
                 $progressBar.css('width', sumProgress(formProgress) + '%');
-                $(this).popover('hide');
+                $("#name").popover('destroy');
                 finalCheck();
             }
         });
         $('#email').bind('change paste keyup', function(){
             if ( ! validateEmail($(this).val())) {
+                if (! $(this).parents('.form-group').hasClass('has-error')) {
+                    $('#email').popover('show');
+                }
                 $(this).parents('.form-group').addClass('has-error').removeClass('has-success');
                 formProgress[1] = 0;
                 $progressBar.css('width', sumProgress(formProgress) + '%');
-                $(this).popover('show');
                 finalCheck();
             } else {
                 $(this).parents('.form-group').removeClass('has-error').addClass('has-success');
                 formProgress[1] = 33;
                 $progressBar.css('width', sumProgress(formProgress) + '%');
-                $(this).popover('hide');
+                $("#email").popover('destroy');
                 finalCheck();
             }
         });
         $('#message').bind('change paste keyup', function(){
             if ( $(this).val().length < 50) {
+                if (! $(this).parents('.form-group').hasClass('has-error')) {
+                    $(this).popover('show');
+                }
                 $(this).parents('.form-group').addClass('has-error').removeClass('has-success');
                 formProgress[2] = 0;
                 $progressBar.css('width', sumProgress(formProgress) + '%');
-                $(this).popover('show');
                 finalCheck();
             } else {
                 $(this).parents('.form-group').removeClass('has-error').addClass('has-success');
                 formProgress[2] = 34;
                 $progressBar.css('width', sumProgress(formProgress) + '%');
-                $(this).popover('hide');
+                $(this).popover('destroy');
                 finalCheck();
             }
         });
