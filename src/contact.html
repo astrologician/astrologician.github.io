@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- standard meta -->
-    <title>PGP Public Key - Joe G. Cochran</title>
+    <title>Contact Me - Joe G. Cochran</title>
 
     @@include('./partials/_appicons.html')
     @@include('./partials/_opengraph.html')
@@ -49,32 +49,116 @@
     </div>
     <main class="primary container">
         <form action="" class="form-horizontal">
+			<div class="row">
+                <div class="col-sm-offset-2 col-sm-8">
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-info" id="formProgress" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+                            <span class="sr-only">0% Complete</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="form-group">
                 <label for="name" class="col-sm-2 control-label">Name</label>
                 <div class="col-sm-8">
-                    <input type="text" id="name" class="form-control">
+                    <input type="text" id="name" class="form-control" data-toggle="popover" data-placement="right" data-container="body" data-content="Minimum 50 characters.">
                 </div>
             </div>
             <div class="form-group">
                 <label for="email" class="col-sm-2 control-label">Email</label>
                 <div class="col-sm-8">
-                    <input type="email" id="email" class="form-control">
+                    <input type="email" id="email" class="form-control" data-toggle="popover" data-placement="right" data-container="body" data-content="Must be a valid email address.">
                 </div>
+
             </div>
             <div class="form-group">
                 <label for="message" class="col-sm-2 control-label">Message</label>
                 <div class="col-sm-8">
-                    <textarea class="form-control" id="message" rows="3"></textarea>
+                    <textarea class="form-control" id="message" rows="3" data-toggle="popover" data-placement="right" data-container="body" data-content="Minimum 50 characters."></textarea>
                 </div>
             </div>
             <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" class="btn btn-primary">Send</button>
+                <button type="submit" id="sendButton" class="btn btn-primary" disabled="disabled">Send</button>
             </div>
         </form>
     </main>
 
     @@include('partials/_footer.html')
     @@include('partials/_scripts.html')
+    <script>
+        var formProgress = [0,0,0],
+            $progressBar = $("#formProgress"),
+            $sendButton = $("#sendButton");
+
+        function sumProgress(array){
+            var sum = 0;
+                for(var i = 0; i < array.length; i++) {
+                    sum += array[i];
+                }
+            return sum;
+        }
+        
+        function finalCheck() {
+            if (sumProgress(formProgress) == 100) {
+               $sendButton.removeAttr('disabled');
+               $progressBar.removeClass('progress-bar-info').addClass('progress-bar-success');
+            } else {
+                $sendButton.attr('disabled', true);
+               $progressBar.removeClass('progress-bar-success').addClass('progress-bar-info');
+            }
+        }
+        
+        function validateEmail(email) {
+            var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+        }
+
+        $('#name').bind('change paste keyup', function(){
+            if ( $(this).val().length < 3) {
+                $(this).parents('.form-group').addClass('has-error').removeClass('has-success');
+                formProgress[0] = 0;
+                $progressBar.css('width', sumProgress(formProgress) + '%');
+                $(this).popover('show');
+                finalCheck();
+            } else {
+                $(this).parents('.form-group').removeClass('has-error').addClass('has-success');
+                formProgress[0] = 33;
+                $progressBar.css('width', sumProgress(formProgress) + '%');
+                $(this).popover('hide');
+                finalCheck();
+            }
+        });
+        $('#email').bind('change paste keyup', function(){
+            if ( ! validateEmail($(this).val())) {
+                $(this).parents('.form-group').addClass('has-error').removeClass('has-success');
+                formProgress[1] = 0;
+                $progressBar.css('width', sumProgress(formProgress) + '%');
+                $(this).popover('show');
+                finalCheck();
+            } else {
+                $(this).parents('.form-group').removeClass('has-error').addClass('has-success');
+                formProgress[1] = 33;
+                $progressBar.css('width', sumProgress(formProgress) + '%');
+                $(this).popover('hide');
+                finalCheck();
+            }
+        });
+        $('#message').bind('change paste keyup', function(){
+            if ( $(this).val().length < 50) {
+                $(this).parents('.form-group').addClass('has-error').removeClass('has-success');
+                formProgress[2] = 0;
+                $progressBar.css('width', sumProgress(formProgress) + '%');
+                $(this).popover('show');
+                finalCheck();
+            } else {
+                $(this).parents('.form-group').removeClass('has-error').addClass('has-success');
+                formProgress[2] = 34;
+                $progressBar.css('width', sumProgress(formProgress) + '%');
+                $(this).popover('hide');
+                finalCheck();
+            }
+        });
+    </script>
 
 </body>
 </html>
