@@ -2,7 +2,7 @@
   "author": "Joe Cochran <j_cochran@me.com>",
   "repository": {
     "type": "git",
-    "url": "git@github.com:joecochran/Homepage.git",
+    "url": "git@github.com:joecochran/Homepage.git"
   },
   "devDependencies": {
     "gulp": "^3.9.0",
@@ -13,7 +13,7 @@
     "psi": "^1.0.6"
   },
   "dependencies": {
-    "bootstrap-sass": "^3.3.5",
+    "bootstrap-sass": "*",
     "font-awesome": "^4.3.0",
     "gulp-cache": "^0.2.10",
     "gulp-cssmin": "^0.1.7",
@@ -23,5 +23,5 @@
     "gulp-uglify": "^1.5.1",
     "jquery": "^2.1.4"
   },
-  { "license" : "BSD-2-Clause" }
+  "license" : "BSD-2-Clause"
 }
