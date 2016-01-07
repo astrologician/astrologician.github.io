@@ -164,6 +164,10 @@ body > .primary.container {
     }
     h1 {
         font-size: 36px;
+        -webkit-font-smoothing: antialiased;
+    }
+    p {
+        -webkit-font-smoothing: antialiased;
     }
 }
 
