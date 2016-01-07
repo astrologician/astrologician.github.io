@@ -70,6 +70,7 @@ gulp.task('watch', function () {
     gulp.watch('./src/sass/**/*.scss', ['sass']);
     gulp.watch('./src/**/*.html', ['html']);
     gulp.watch('./src/img/**/*', ['images']);
+	gulp.watch('./src/js/**/*.js', ['scripts']);
 });
 
 gulp.task('default', ['sass', 'scripts', 'fonts', 'html', 'move', 'images', 'connect', 'watch']);

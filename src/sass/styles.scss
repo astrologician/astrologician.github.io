@@ -1,5 +1,6 @@
 @import "../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 @import '../../node_modules/font-awesome/scss/font-awesome.scss';
+@import 'animate.scss';
 body {
     // padding-top: 50px;
     font-family: 'Roboto','Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;
@@ -200,4 +201,10 @@ img.media-object {
     .publickey {
         font-size: .6em;
     }
+}
+.anihidden{
+    opacity:0;
+}
+.anivisible{
+    opacity:1;
 }
