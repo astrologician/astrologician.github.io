@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Full Stack Web Developer in Arroyo Grande, CA - Joe G. Cochran</title>
+    <title>Riddell.com - Joe G. Cochran</title>
 
-    @@include('./partials/_appicons.html')
-    @@include('./partials/_opengraph.html')
-    @@include('./partials/_twittercard.html')
+    @@include('../partials/_appicons.html')
+    @@include('../partials/_opengraph.html')
+    @@include('../partials/_twittercard.html')
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,700italic,400italic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container cd-main-content">
+        <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                     <span class="sr-only">Toggle navigation</span>
@@ -26,37 +26,44 @@
             </div>
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="index.html">Home</a></li>
-                    <li><a href="work.html" data-type="page-transition">Work</a></li>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/work.html">Work</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div>
     </nav>
 
-    <div class="jumbotron">
+    <div class="jumbotron portfolio-detail riddell">
         <div class="jumbocover"></div>
         <div class="container">
-            <img src="img/joecochran_lrg.jpg" alt="Photo of Joe G Cochran" height="200" width="200" class="avatar">
-            <h1>Joe G. Cochran</h1>
-            <p>Full Stack Web Developer</p>
-            <hr>
-            <a class="btn btn-default" href="//github.com/joecochran" role="button"><i class="fa fa-github fa-lg"></i> Github</a>
-            <a class="btn btn-default" href="//linkedin.com/in/joecochran" role="button"><i class="fa fa-linkedin-square fa-lg"></i> LinkedIn</a>
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="/img/riddell-lrg.jpg" class="img-responsive img-thumbnail" alt="">
+                </div>
+                <div class="col-md-6">
+                    <h1>Riddell</h1>
+                    <p>Large scale Magento Ecommerce with custom wordpress component. Marketing pages done with parallax effects for added engagement.</p>
+                    <a class="btn btn-primary" href="http://riddell.com" role="button" target="_blank">Live Website <i class="fa fa-external-link fa-lg"></i></a>
+                </div>
+            </div>
         </div>
     </div><!--/.jumbotron -->
 
     <main class="primary container">
-        <div class="narrow">
+        <ol class="breadcrumb">
+            <li><a href="/">Home</a></li>
+            <li><a href="/work.html">Work</a></li>
+            <li class="active">Riddell.com</li>
+        </ol>
+        <article>
+            <h2>About</h2>
             <p>Hi, my name is Joe Cochran. I&#8217;m a Full Stack Web Developer living and working in Arroyo Grande, CA. I work primarily with PHP and JavaScript, utilizing <a href="http://laravel.com" target="_blank">Laravel <sup><i class="fa fa-external-link"></i></sup></a>, <a href="https://angularjs.org" target="_blank">Angular.js <sup><i class="fa fa-external-link"></i></sup></a>, <a href="https://nodejs.org" target="_blank">Node.js <sup><i class="fa fa-external-link"></i></sup></a> and a variety of other tools and languages.</p>
             <p>I primarily work with Git for version control, Sass as my CSS preprocessor, and Gulp for asset concatenation and compilation. I&#8217;ve also worked with SVN, Mercurial, and Grunt.</p>
             <p>The majority of my professional work has been custom web applications written in PHP relying on the Laravel MVC framework. Aside from Laravel, I have created and customized sites built on some of the more popular CMS packages, including Wordpress, Magento, and CS-Cart. </p>
-        </div>
-      </div>
-
-
+        </article>
     </main>
-    @@include('./partials/_footer.html')
-    @@include('./partials/_scripts.html')
+    @@include('../partials/_footer.html')
+    @@include('../partials/_scripts.html')
 
 </body>
 </html>

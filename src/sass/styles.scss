@@ -1,11 +1,11 @@
 @import "../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 @import '../../node_modules/font-awesome/scss/font-awesome.scss';
-
 body {
     // padding-top: 50px;
     font-family: 'Roboto','Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;
-    // font-size: 16px;
-    margin-bottom: 60px;
+    font-size: 16px !important;
+    margin-bottom: 60px !important;
+    line-height: 1.6 !important;
 }
 a {
     color: #f4645f;
@@ -23,6 +23,7 @@ html {
 }
 h1, h2, h3, h4, h5 {
     font-weight: 700;
+    line-height: 1.6;
 }
 .footer {
   position: absolute;
@@ -118,6 +119,7 @@ body > .primary.container {
     padding-bottom: 68px;
     background: url('../img/road_web.jpg');
     background-size: cover;
+    background-position: center;
     color: #fff;
     position: relative;
     .jumbocover {
@@ -132,6 +134,24 @@ body > .primary.container {
         background: rgba(0,0,0,0.6);
         z-index:0;
     }
+    &.portfolio-detail {
+        text-align: left !important;
+        hr {
+            width: 75%;
+            float: left;
+        }
+        &.riddell {
+            background: url('../img/riddell-curtain.jpg');
+            background-position: 50% 50%;
+        }
+        p {
+            border-top: 1px solid rgba(255,255,255,.5);
+            padding-top: 16px;
+        }
+        a.btn {
+            float:right;
+        }
+    }
     .container {
         z-index: 1;
         position: relative;
@@ -139,6 +159,7 @@ body > .primary.container {
     hr {
         width: 50%;
         opacity: 0.25;
+        clear:both;
     }
     h1 {
         font-size: 36px;
@@ -151,7 +172,10 @@ body > .primary.container {
         padding: 0 .5em;
     }
 }
-
+.breadcrumb {
+    font-size: .75em;
+    // background: none;
+}
 .avatar {
     max-width: 70%;
     border-radius: 100%;

@@ -20,8 +20,8 @@ gulp.task('sass', function(){
 
 gulp.task('scripts', function(){
     return gulp.src([
-        'src/js/plugins.js',
         'node_modules/jquery/dist/jquery.min.js',
+        'src/js/plugins.js',
         'node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js',
         'src/js/picturefill.js'])
         .pipe(concat('app.js'))
@@ -42,6 +42,13 @@ gulp.task('html', function(){
         }))
         .pipe(minifyHTML({conditionals: true, spare: true, empty: true}))
         .pipe(gulp.dest('./dist/'));
+    gulp.src('src/projects/*.html')
+        .pipe(fileInclude({
+            prefix: '@@',
+            basepath: '@file'
+        }))
+        .pipe(minifyHTML({conditionals: true, spare: true, empty: true}))
+        .pipe(gulp.dest('./dist/projects/'));
 });
 gulp.task('images', function() {
     gulp.src('src/img/**/*')
